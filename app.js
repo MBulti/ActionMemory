@@ -13,7 +13,6 @@ function flipCard() {
   if (!hasFlippedCard) {
     hasFlippedCard = true;
     firstCard = this;
-
     return;
   }
 
@@ -22,7 +21,7 @@ function flipCard() {
 }
 
 function checkForMatch() {
-  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+  let isMatch = firstCard.dataset.type === secondCard.dataset.type;
 
   isMatch ? disableCards() : unflipCards();
 }
@@ -40,9 +39,8 @@ function unflipCards() {
   setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
-
     resetBoard();
-  }, 1500);
+  }, 1250);
 }
 
 function resetBoard() {
